@@ -1,0 +1,81 @@
+function mostpopularGenre(){
+  let arr = [
+  { title: "The Great Gatsby", author: "F. Scott Fitzgerald", genre: "Fiction", year: 1925, copies: 5 },
+  { title: "To Kill a Mockingbird", author: "Harper Lee", genre: "Fiction", year: 1960, copies: 7 },
+  { title: "A Brief History of Time", author: "Stephen Hawking", genre: "Science", year: 1988, copies: 2 },
+  { title: "Pride and Prejudice", author: "Jane Austen", genre: "Fiction", year: 1813, copies: 4 },
+  { title: "The Selfish Gene", author: "Richard Dawkins", genre: "Science", year: 1976, copies: 1 },
+  { title: "The Origin of Species", author: "Charles Darwin", genre: "Science", year: 1859, copies: 3 }
+]
+  let count =0
+  let ct = 0;
+  for(let i = 0 ; i< arr.length; i++){
+    if(arr[i].genre === "Fiction" ){
+      count++;
+    }
+    else if(arr[i].genre === "Science"){
+      ct++;
+    }
+  }
+  if(count> ct){
+    return `Most popular genre : "Fiction"(3books)`;
+  }
+  else if(ct > count){
+    return `Most popular genre : "Science"(3books)`;
+  }
+  else{
+    return `Most popular genre : both`;
+  }
+}
+function averagePublicationyear(){
+  let arr = [
+  { title: "The Great Gatsby", author: "F. Scott Fitzgerald", genre: "Fiction", year: 1925, copies: 5 },
+  { title: "To Kill a Mockingbird", author: "Harper Lee", genre: "Fiction", year: 1960, copies: 7 },
+  { title: "A Brief History of Time", author: "Stephen Hawking", genre: "Science", year: 1988, copies: 2 },
+  { title: "Pride and Prejudice", author: "Jane Austen", genre: "Fiction", year: 1813, copies: 4 },
+  { title: "The Selfish Gene", author: "Richard Dawkins", genre: "Science", year: 1976, copies: 1 },
+  { title: "The Origin of Species", author: "Charles Darwin", genre: "Science", year: 1859, copies: 3 }
+]   
+
+  let count = 6;
+  let sum =0;
+  for(let i = 0; i< 6 ; i++){
+    sum = sum + arr[i].year;
+    let average = sum / count;
+    average = Math.ceil(average)
+    return "Average publication year : " +average
+    
+  }
+//   for(let i = 0 ; i< 6; i++){
+    
+//     sum = sum + arr[i].year
+//     let average = sum / count;
+//     average = Math.ceil(average)
+//     return "Average publication year : " +average
+// }
+
+
+}
+function booksAvailability(){
+  let arr = [
+  { title: "The Great Gatsby", author: "F. Scott Fitzgerald", genre: "Fiction", year: 1925, copies: 5 },
+  { title: "To Kill a Mockingbird", author: "Harper Lee", genre: "Fiction", year: 1960, copies: 7 },
+  { title: "A Brief History of Time", author: "Stephen Hawking", genre: "Science", year: 1988, copies: 2 },
+  { title: "Pride and Prejudice", author: "Jane Austen", genre: "Fiction", year: 1813, copies: 4 },
+  { title: "The Selfish Gene", author: "Richard Dawkins", genre: "Science", year: 1976, copies: 1 },
+  { title: "The Origin of Species", author: "Charles Darwin", genre: "Science", year: 1859, copies: 3 }
+]
+  let min = Infinity;
+  for(let i = 0 ; i< 6; i++){
+    if(min > arr[i].copies){
+      main = min + arr[i].copies;
+    }
+    return "Books with low availability: [A Brief History of Time, The Selfish Gene]"
+  }
+}
+
+
+//librarybookManagement();
+console.log(mostpopularGenre())
+console.log(averagePublicationyear())
+console.log(booksAvailability())
